@@ -11,7 +11,7 @@ def main(argv):
        
     parser.add_argument('-i', dest='les_seg', required=True)
     parser.add_argument('-v', dest='ventr_seg', default=None )
-    parser.add_argument('-min', type=int, dest='minimum_volume', default=25)
+    parser.add_argument('-min', type=int, dest='minimum_border', default=25)
     parser.add_argument('-neigh', dest='neighbourhood', default=1, choices=[1, 2, 3], 
                         action='store', type=int,
                         help='type of neighborhood applied when creating the '
