@@ -11,7 +11,8 @@ def main(argv):
        
     parser.add_argument('-i', dest='les_seg', required=True)
     parser.add_argument('-v', dest='ventr_seg', default=None )
-    parser.add_argument('-min', type=int, dest='minimum_border', default=25)
+    parser.add_argument('-min', type=int, dest='minimum_border', default=25, 
+                       help= 'minimum percentage of border which is in contact with the ventricles to be excluded from classify.csv')
     parser.add_argument('-neigh', dest='neighbourhood', default=1, choices=[1, 2, 3], 
                         action='store', type=int,
                         help='type of neighborhood applied when creating the '
@@ -23,7 +24,7 @@ def main(argv):
     args = parser.parse_args()
     
     
-    print(args.les_seg, args.ventr_seg, args.minimum_volume, args.neighbourhood, args.binary_structure)
+    print(args.les_seg, args.ventr_seg, args.minimum_border, args.neighbourhood, args.binary_structure)
     
     les_file = args.les_seg
     ventr_file = args.ventr_seg
